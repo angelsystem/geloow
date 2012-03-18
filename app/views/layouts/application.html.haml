@@ -1,0 +1,29 @@
+!!! XML
+!!!
+%html{:lang => "en", "xml:lang" => "en", :xmlns => "http://www.w3.org/1999/xhtml"}
+  %head
+    %meta( charset="UTF-8")
+    %meta{ name: 'robots', content: 'index, follow' }
+    %meta{ name: 'description', content: "Enviar dinero nunca fue tan rápido ni barato. Usa SendDinero para enviar dinero por Internet de una manera segura y paga el monto más bajo del mercado, de maneras distintas y sencillas, sin hacer colas." }
+    %meta{ name: 'keywords', content: "#{t(:head__keywords)}" }
+    %link{ href: '/images/favicon.ico', rel: 'shortcut icon', type: 'image/x-icon' }
+    %title SendDinero.com    
+    = stylesheet_link_tag    "application", :media => "all"    
+    = javascript_include_tag :defaults            
+    = yield(:head)
+    = csrf_meta_tag
+
+  %body
+    #head
+      #menu
+        %ul
+          %li 
+            = link_to "Home","#"
+          %li 
+            = link_to "How-it-works","#"
+          %li 
+            = link_to "Portafolio","#"
+          %li 
+            = link_to "blog","#"
+    #wrapper-cont
+      = yield
